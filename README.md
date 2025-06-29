@@ -33,21 +33,24 @@ FoodCal AI is an advanced full-stack AI-powered web application that identifies 
 git clone https://github.com/lavishsingh12/PRODIGY_ML_05.git
 cd PRODIGY_ML_05
 2️⃣ Run the Backend (FastAPI)
-# Install Python dependencies
+
+Install Python dependencies
 pip install -r requirements.txt
 
-# Start FastAPI server
+Start FastAPI server
 uvicorn app:app --reload
+
 📌 Note: Replace the api_key in app.py with your Gemini API key
 
 3️⃣ Run the Frontend (React)
+
 cd foodcal-ai-visualizer
 npm install
 npm run dev
+
 🔗 Access the App
 Frontend: http://localhost:8080
-
-Backend API: http://localhost:8000
+Backend : http://localhost:8000
 
 ## 🌐 Live Demo
 Coming Soon...
