@@ -31,7 +31,9 @@ FoodCal AI is an advanced full-stack AI-powered web application that identifies 
 ## 🚀 Getting Started (Run Locally)
 1️⃣ Clone the Repository
 git clone https://github.com/lavishsingh12/PRODIGY_ML_05.git
+
 cd PRODIGY_ML_05
+
 2️⃣ Run the Backend (FastAPI)
 
 Install Python dependencies
@@ -49,7 +51,9 @@ npm install
 npm run dev
 
 🔗 Access the App
+
 Frontend: http://localhost:8080
+
 Backend : http://localhost:8000
 
 ## 🌐 Live Demo
