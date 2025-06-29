@@ -1,0 +1,31 @@
+# Ignore Python junk
+__pycache__/
+*.py[cod]
+*.keras
+temp_image*
+tempCodeRunnerFile.python
+.env
+data/
+food_raw3/
+
+# Ignore Node junk
+node_modules/
+.bun.lockb
+dist/
+foodcal-ai-visualizer/.env
+
+# Ignore IDE/MacOS clutter
+.DS_Store
+.vscode/
+.idea/
+
+# Ignore model or training files
+class_indices.json
+class_names.json
+food_v4.code-workspace
+model_trainer.py
+package-lock.json
+
+# Ignore inner frontend repo's old git config
+foodcal-ai-visualizer/.git
+foodcal-ai-visualizer/.gitignore
