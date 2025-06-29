@@ -10,7 +10,7 @@ from fastapi.responses import JSONResponse
 import json
 
 
-genai.configure(api_key="GEMINI_API_KEY")
+genai.configure(api_key="AIzaSyCinF4y8UTTm154IG2APblqlP4fZjs3UXU")
 model = genai.GenerativeModel("gemini-1.5-flash")  # WE can also use "gemini-1.5-pro"
 
 # Let's setup FastAPI app
