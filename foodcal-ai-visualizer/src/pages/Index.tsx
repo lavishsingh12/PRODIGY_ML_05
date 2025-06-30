@@ -60,7 +60,7 @@ const Index = () => {
     try {
       const base64 = await convertToBase64(file);
 
-      const response = await fetch("http://localhost:8000/predict", {
+      const response = await fetch("https://foodcal-backend.onrender.com/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ image: base64.split(',')[1] })
