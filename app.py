@@ -9,7 +9,7 @@ import google.generativeai as genai
 from fastapi.responses import JSONResponse
 import json
 from dotenv import load_dotenv
-
+import os
 load_dotenv()
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))  # genai.configure(api_key="your_api_key")  if you dont save it as your environment variable
