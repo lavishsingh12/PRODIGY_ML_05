@@ -8,9 +8,11 @@ from PIL import Image
 import google.generativeai as genai
 from fastapi.responses import JSONResponse
 import json
+from dotenv import load_dotenv
 
+load_dotenv()
 
-genai.configure(api_key="AIzaSyCinF4y8UTTm154IG2APblqlP4fZjs3UXU")
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))  # genai.configure(api_key="your_api_key")  if you dont save it as your environment variable
 model = genai.GenerativeModel("gemini-1.5-flash")  # WE can also use "gemini-1.5-pro"
 
 # Let's setup FastAPI app
