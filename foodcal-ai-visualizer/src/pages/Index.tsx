@@ -60,7 +60,7 @@ const Index = () => {
     try {
       const base64 = await convertToBase64(file);
 
-      const response = await fetch("https://foodcal-backend.onrender.com/predict", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/predict`, {     // Write your backend url like https://localhost....
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ image: base64.split(',')[1] })
@@ -74,7 +74,6 @@ const Index = () => {
         parsed = raw;
       }
 
-      // 🔁 FIX 2: Make sure string passed to getNutrition is lowercase-safe
       const nutritionData = {
         foodName: parsed.food || "Unknown",
         calories: parsed.calories,
