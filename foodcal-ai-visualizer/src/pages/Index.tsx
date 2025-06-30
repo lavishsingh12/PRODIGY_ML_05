@@ -41,6 +41,23 @@ const Index = () => {
     };
   };
 
+  async function fetchWithRetry(
+  url: string,
+  options: RequestInit,
+  retries = 6,
+  delay = 2000
+): Promise<Response> {
+  try {
+    const response = await fetch(url, options);
+    if (!response.ok) throw new Error("Request failed");
+    return response;
+  } catch (error) {
+    if (retries <= 0) throw error;
+    await new Promise((resolve) => setTimeout(resolve, delay));
+    return fetchWithRetry(url, options, retries - 1, delay);
+    }
+  }
+
   const convertToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -60,7 +77,7 @@ const Index = () => {
     try {
       const base64 = await convertToBase64(file);
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/predict`, {     // Write your backend url like https://localhost....
+      const response = await fetchWithRetry(`${import.meta.env.VITE_API_URL}/predict`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ image: base64.split(',')[1] })
